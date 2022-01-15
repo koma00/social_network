@@ -1,0 +1,16 @@
+@import 'config';
+
+// 1. Configuration and helpers
+@import
+'abstracts/functions';
+
+// 2. Base stuff
+@import
+'base/typography';
+
+// 3. Layout-related sections
+@import
+'layout/layout',
+'layout/navigation',
+'layout/header',
+'layout/footer';

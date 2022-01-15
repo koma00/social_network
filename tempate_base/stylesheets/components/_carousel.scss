@@ -1,0 +1,121 @@
+/* Basic styles for carousel
+   ========================================================================== */
+
+.products-holder {
+
+  .owl-carousel {
+
+    .owl-controls {
+
+      .owl-dots {
+        margin-top: remy(49);
+      }
+
+    }
+
+  }
+
+}
+
+/* Navigation
+ ================================================= */
+
+.owl-nav  {
+
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #2a2e33;
+    font-weight: 400;
+    font-size: 42px;
+    transition: all .45s ease;
+  }
+
+  > .owl-prev { left: -6px;  }
+  > .owl-next { right: -6px; }
+
+  .owl-prev::before,
+  .owl-next::before {
+    display: block;
+    font-family: 'Material Icons Outlined';
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: middle;
+  }
+
+  .owl-prev::before { content: "chevron_left"; }
+  .owl-next:before  { content: "chevron_right"; }
+
+}
+
+.flex-control-nav {
+
+  .owl-nav {
+
+    .owl-prev,
+    .owl-next {
+
+    }
+
+    .owl-prev::before {}
+    .owl-next:before  {}
+
+  }
+
+}
+
+/* Dots
+ ================================================= */
+
+.owl-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  margin-top: remy(42);
+  line-height: remy(14);
+  text-align: center;
+
+  .owl-dot {
+    display: block;
+    opacity: 1;
+    margin: 0 remy(3);
+    width: remy(22);
+    height: remy(4);
+    background-color: #dfd9d2;
+    cursor: pointer;
+    transition: width .35s ease;
+
+    &.active {
+      width: remy(42);
+      background-color: #bee6fd;
+    }
+
+    &:hover {
+      background-color: #bee6fd;
+    }
+
+  }
+
+}
+
+.owl-dots__bottom--light {
+
+  .owl-dots {
+    z-index: 2;
+    margin-top: remy(28);
+    width: 100%;
+
+    .owl-dot {
+      background-color: #dfd9d2;
+
+      &.active {
+        background-color: #fff;
+      }
+    }
+
+  }
+
+}

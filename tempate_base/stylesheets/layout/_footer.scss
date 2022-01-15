@@ -1,0 +1,85 @@
+/* Basic styles for footer
+   ========================================================================== */
+
+.site-footer {
+  background-color: #262a2e;
+  color: #b9babd;
+
+  .site-footer-inner {
+    padding: 70px 0 28px;
+  }
+
+  .widget-title {
+    margin-bottom: 28px;
+    font-size: remy(18);
+    font-weight: 700;
+    line-height: 21px;
+    color: #fff;
+  }
+
+  .copyright-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+    background-color: #262a2e;
+    color: #b9babd;
+
+    @media (max-width: 576px) {
+      padding: 14px;
+    }
+
+    @media (max-width: 320px) {
+      flex-direction: column;
+    }
+
+    a {
+      color: #fff;
+    }
+
+  }
+
+  @media (max-width: 992px) {
+
+    .d-flex {
+
+      [class*="col-"] {
+
+        &:not(:last-child) {
+          margin-bottom: 42px;
+        }
+
+      }
+
+    }
+
+  }
+
+  &.no-has-theme-plugin {
+
+    .flex-row {
+
+      flex-flow: wrap;
+
+      .widget {
+        position: relative;
+        min-height: 1px;
+        padding-right: remy(14);
+        padding-left: remy(14);
+        width: 25%;
+
+        @media (min-width: 575px) and (max-width: 768px) {
+          width: 50%;
+        }
+
+        @media (max-width: 576px) {
+          width: 100%;
+        }
+
+      }
+
+    }
+
+  }
+
+}

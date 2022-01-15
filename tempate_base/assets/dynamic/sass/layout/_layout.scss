@@ -1,0 +1,19 @@
+/* General
+//   ========================================================================== */
+
+body {
+  background-color: $body_bg_color;
+  background-repeat: $body_bg_repeat;
+  background-size: $body_bg_size;
+  background-attachment: $body_bg_attachment;
+  background-position: $body_bg_position;
+  background-image: $body_bg_image;
+}
+
+/* Primary Color
+  ========================================================================== */
+
+.ps-widget__hashtags .ps-hashtag--box:hover
+{
+  background-color: $primary_color;
+}

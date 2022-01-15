@@ -1,0 +1,117 @@
+/* Basic styles for navigation
+   ========================================================================== */
+
+.site-header {
+
+  .main-navigation {
+
+	> ul {
+
+
+	  > li {
+
+		> a {
+		  font-family: $menu_font_family;
+		  font-size: $menu_font_size;
+		  font-weight: $menu_font_weight;
+		  text-transform: $menu_text_transform;
+		  color: $main_menu_top_level_link_color;
+		}
+
+	  }
+
+	}
+
+	.sub-menu {
+	  background-color: $sub_menu_bg_color;
+
+	  li {
+
+		a {
+		  font-family: $sub_menu_font_family;
+		  font-size: $sub_menu_size;
+		  font-weight: $sub_menu_weight;
+		  color: $sub_menu_link_color;
+		}
+
+		&:hover {
+
+		  > a {
+			background-color: $sub_menu_bg_active_color;
+			color: $sub_menu_hover_color;
+		  }
+
+		}
+
+		&.current-menu-item,
+		&.current-menu-parent,
+		&.current-menu-ancestor,
+		&.current_page_item,
+		&.current_page_parent,
+		&.current_page_ancestor
+		{
+
+		  > a {
+			background-color: $sub_menu_bg_active_color;
+		  }
+
+		}
+
+	  }
+
+	}
+
+  }
+
+}
+
+/* Basic styles for responsive navigation
+   ========================================================================== */
+
+  .mad-nav-panel {
+
+	.menu__breadcrumbs {
+	  a {
+		color: $mobile_menu_active_color;
+	  }
+	}
+
+	.mobile-menu-wrap {
+
+	  .menu__level {
+
+		.menu__item {
+
+		  &.current-menu-item,
+		  &.current-menu-ancestor,
+		  &.current-menu-parent,
+		  &.current_page_item,
+		  &.current_page_parent,
+		  &.current_page_ancestor {
+
+			.menu__link {
+			  color: $mobile_menu_active_color;
+			}
+
+		  }
+
+		  .menu__link {
+			color: $mobile_menu_color;
+
+			&:hover,
+			&:focus,
+			&[data-submenu]:hover::after,
+			&[data-submenu]:focus::after
+			{
+			  color: $mobile_menu_active_color;
+			}
+
+		  }
+
+		}
+
+	  }
+
+	}
+
+  }

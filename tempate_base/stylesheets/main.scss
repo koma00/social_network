@@ -1,0 +1,76 @@
+/*
+Theme Name: Matebook
+Theme URI: https://velikorodnov.com/wordpress
+Author: Designed by monkeysan
+Author URI: https://themeforest.net/user/monkeysan/portfolio
+Description: Thanks for purchase <strong>MateBook - Social Network WordPress Theme</strong> - Based on PeepSo WordPress plugin. PeepSo is a super-light, free, social network plugin for WordPress that allows you to quickly and effortlessly add a social network or an online community, similar to Facebook right inside your WordPress site.
+Version: 1.0.1
+Tags: one-column, two-columns, left-sidebar, right-sidebar, sticky-post, theme-options
+Text Domain: matebook
+License: Commercial
+License URI: http://themeforest.net/licenses/regular_extended
+*/
+
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	    Matebook
+Last change:	23/02/2021 [initial release]
+Assigned to:	mad_velikorodnov
+Primary use:
+
+/*------------------------------------------------------------------
+[Color codes]
+
+# Primary Color: #bee6fd
+
+a (standard): #333
+
+/*------------------------------------------------------------------
+[Typography]
+
+Body: ;
+Headers: ;
+*/
+
+// 1. Configuration and helpers
+@import
+  'abstracts/breakpoints',
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// 2. Base stuff
+@import
+  'base/reset',
+  'base/normalize',
+  'base/typography',
+  'base/animation';
+
+// 3. Layout-related sections
+@import
+  'layout/bootstrap/grid',
+  'layout/bootstrap/grid-framework',
+  'layout/grid',
+  'layout/layout',
+  'layout/navigation',
+  'layout/header',
+  'layout/footer',
+  'layout/forms';
+
+// 4. Components
+@import
+  'components/wp_block',
+  'components/widgets',
+  'components/carousel',
+  'components/icons';
+
+// 5. Themes
+@import
+  'themes/default';
+
+// 6. Vendors
+@import
+  'vendors/woocommerce',
+  'vendors/wpadverts',
+  'vendors/peepso';

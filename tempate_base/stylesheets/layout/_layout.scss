@@ -1,0 +1,256 @@
+/* Basic styles for layout
+   ========================================================================== */
+
+.wrapper-container {
+  position: relative;
+  transition: all .5s ease;
+}
+
+body.page {
+
+  &:not(.plg-peepso):not(.woocommerce-page) {
+
+	.site-content {
+	  padding: 28px;
+	  border-radius: 7px;
+	  box-shadow: 0 0 21px rgba(54, 60, 66, 0.07);
+	  background-color: #fff;
+
+	  @media (max-width: 575px) {
+		padding-top: 14px;
+		padding-bottom: 14px;
+	  }
+	}
+  }
+
+}
+
+.post--page {
+
+  &:not(:last-child) {
+	margin-bottom: 21px;
+  }
+
+}
+
+.site-main {
+  --container: 1580px;
+
+  max-width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 42px 14px 56px 14px;
+
+  @media (max-width: 992px) {
+	display: flex;
+	flex-wrap: wrap;
+  }
+
+  @media (min-width: 576px) {
+	padding-top: 56px;
+	padding-bottom: 70px;
+  }
+
+  @media (min-width: 320px) {
+
+	body.woocommerce-page & {
+	  padding-left: 7px;
+	  padding-right: 7px;
+	}
+
+  }
+
+  .site-content {
+	width: 100%;
+	z-index: 1;
+	grid-area: content;
+	order: 1;
+
+	@media (max-width: 992px) {
+	  margin-bottom: 28px;
+	}
+
+  }
+
+  .site-sidebar {
+
+	@media (max-width: 992px) {
+	  margin-bottom: 28px;
+	}
+
+	&.sidebar--left {
+	  grid-area: sidebar-left;
+	  order: 2;
+
+	  @media (max-width: 992px) {
+		width: 100%;
+	  }
+
+	}
+
+	&.sidebar--right {
+	  grid-area: sidebar-right;
+	  order: 3;
+
+	  @media (max-width: 992px) {
+		width: 100%;
+	  }
+
+	}
+
+  }
+
+  &.no-sidebar {
+	max-width: 960px;
+  }
+
+  @media (min-width: 993px) {
+
+	&.both {
+	  display: grid;
+	  grid-gap: 28px;
+	  grid-template-columns: 1fr 2fr 1fr;
+	  grid-template-areas: "sidebar-left content sidebar-right";
+
+	  &.has-sidebar--left:not(.has-sidebar--right) {
+		grid-template-columns: calc(30% - 14px) calc(70% - 14px);
+		grid-template-areas: "sidebar-left content";
+	  }
+
+	  &.has-sidebar--right:not(.has-sidebar--left) {
+		grid-template-columns: calc(70% - 14px) calc(30% - 14px);
+		grid-template-areas: "content sidebar-right";
+	  }
+
+	}
+
+  }
+
+   @media (min-width: 1200px) {
+
+	 &.both {
+	   grid-template-columns: calc(25% - 18px) calc(50% - 20px) calc(25% - 18px);
+
+	   &.has-sidebar--left:not(.has-sidebar--right) {
+		 grid-template-columns: calc(25% - 14px) calc(75% - 14px);
+		 grid-template-areas: "sidebar-left content";
+	   }
+
+	   &.has-sidebar--right:not(.has-sidebar--left) {
+		 grid-template-columns: calc(75% - 14px) calc(25% - 14px);
+		 grid-template-areas: "content sidebar-right";
+	   }
+
+	 }
+
+   }
+
+  .entry-content {
+
+	&:after {
+	  clear: both;
+	}
+
+	&:after,
+	&:before {
+	  content: "";
+	  display: table;
+	  width: 100%;
+	}
+
+	> p:last-child {
+
+	  img {
+		margin-bottom: 0;
+	  }
+
+	}
+
+  }
+
+}
+
+/* Section
+   ========================================================================== */
+
+.page-title-holder {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 56px 0 0;
+}
+
+.title-holder {
+
+  &:not(:last-child) {
+  	margin-bottom: 21px;
+  }
+
+}
+
+.section-title-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px 28px;
+  border-radius: 7px 7px 0 0;
+  background-color: #fff;
+
+  @media (max-width: 575px) {
+	padding: 21px;
+  }
+
+  &:not(:last-child) {
+	border-bottom: 2px solid #f1f2f4;
+  }
+
+  &.with-elem {
+	padding-top: 14px;
+	padding-bottom: 14px;
+  }
+
+  h5 {
+	margin-bottom: 0;
+	color: #2a2e33;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 21px;
+  }
+
+}
+
+/* Preloader
+   ========================================================================== */
+
+.mad-preloader-circle,
+.mad-preloader {
+  position: fixed;
+  width: 260vw;
+  height: 260vw;
+  margin-left: -130vw;
+  margin-top: -130vw;
+  background-color: #fff;
+  z-index: 50;
+  border-radius: 50%;
+  transition-property: transform;
+  transition-delay: 0ms;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mad-preloader-circle {
+  transition-timing-function: linear;
+}
+
+.mad-preloader {
+  left: 50%;
+  top: 50%;
+}
+
+.mad-preloader-circle, .mad-preloader.mad-preloader--disappearing {
+  transform: scale3d(0, 0, 0);
+}
+
+.mad-preloader-circle--appearing {
+  transform: scale3d(1, 1, 1);
+}

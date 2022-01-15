@@ -1,0 +1,241 @@
+/* Basic styles for forms
+   ========================================================================== */
+
+/* Inputs & Textarea */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="url"],
+input[type="tel"],
+textarea,
+select
+{
+  padding: 10px 21px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #e3e6e9;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 21px;
+  color: #75828f;
+  font-family: inherit;
+  background-color: #f9f9f9;
+
+  &:focus {
+    border-color: #2186c3;
+  }
+}
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+
+  &::placeholder {
+    color: #75828f;
+    opacity: 1;
+  }
+
+}
+
+textarea {
+  min-height: 140px;
+}
+
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+  		  appearance: none;
+}
+
+select {
+  background-image: url('assets/images/select-arrow.png');
+  background-position: 98% center;
+  background-repeat: no-repeat;
+
+  @media (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-pixel-ratio: 2) {
+
+    & {
+      background-image: url('assets/images/select-arrow@2x.png');
+      background-size: contain;
+      background-position: 100% center;
+    }
+
+  }
+
+}
+
+textarea {
+  display: block;
+  height: initial;
+  resize: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+
+input:not([type="submit"]):focus,
+textarea:focus,
+select:focus {
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0 none transparent;
+}
+
+.post-password-form {
+
+  p {
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media (max-width: 420px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        input[type="password"] {
+          margin-top: 7px;
+          margin-bottom: 14px;
+          width: 100%;
+        }
+      }
+    }
+
+  }
+
+  input[name="post_password"] {
+    margin-left: 7px;
+    margin-right: 7px;
+    width: auto;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: top;
+  }
+
+  input[type="submit"] {
+    display: inline-block;
+    padding: 11px 21px;
+    font-size: remy(14);
+    line-height: 22px;
+    border-radius: 21px;
+    background-color: #e1e2e3;
+    color: #2a2e33;
+    white-space: nowrap;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    transition: all .25s ease;
+
+    &:hover {
+      background-color: #54595e;
+      color: #fff;
+    }
+  }
+
+}
+
+input, button {
+  -webkit-appearance: none;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+button { cursor: pointer; }
+
+/* Label & Legend */
+
+label,
+legend {
+  display: block;
+  margin-bottom: 7px;
+  color: #41484f;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+label[for]{
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Checkbox & Radio */
+
+input[type="radio"],
+input[type="checkbox"] {
+
+  display: none;
+
+  & + label {
+    display: block;
+    position: relative;
+    font-size: 14px;
+    line-height: 28px;
+    padding-left: 42px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 0;
+    min-height: 28px;
+    color: #41484f;
+  }
+
+  & + label::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #e3e6e9;
+    border-radius: 10px;
+    background: #f9f9f9;
+    content: "";
+  }
+
+  & + label::after {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    border-radius: 7px;
+    background-color: #2a2e33;
+    display: none;
+    content: "";
+  }
+
+  &:checked {
+
+    & + label::after {
+      display: block;
+      background-color: #2a2e33;
+    }
+
+  }
+
+}
