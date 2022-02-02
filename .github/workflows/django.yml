@@ -43,7 +43,7 @@ jobs:
           python manage.py migrate
         env:
           SECRET_KEY: testsecretkey
-          DB_HOST: postgres
+          DB_HOST: 127.0.0.1
           POSTGRES_USER: user
           POSTGRES_PASSWORD: password
           POSTGRES_DB: db
@@ -53,7 +53,7 @@ jobs:
           python manage.py test
         env:
           SECRET_KEY: testsecretkey
-          DB_HOST: postgres
+          DB_HOST: 127.0.0.1
           POSTGRES_USER: user
           POSTGRES_PASSWORD: password
           POSTGRES_DB: db
