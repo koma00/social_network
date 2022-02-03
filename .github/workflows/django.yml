@@ -47,6 +47,10 @@ jobs:
           DB_USER: user
           DB_PASS: password
           DB_NAME: db
+      - name: Lint with Flake8
+        working-directory: ./app
+        run: |
+          flake8 .
       - name: Run Tests
         working-directory: ./app
         run: |
