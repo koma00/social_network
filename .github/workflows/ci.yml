@@ -1,15 +1,12 @@
-name: Django CI
+name: CI
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  tests:
+    runs-on: ubuntu-20.04
     services:
       postgres:
         image: postgres:14.1-alpine
