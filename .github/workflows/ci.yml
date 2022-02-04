@@ -58,7 +58,9 @@ jobs:
           DB_USER: user
           DB_PASS: password
           DB_NAME: db
+
   automerge:
+    needs: tests
     runs-on: ubuntu-latest
     steps:
       - name: automerge
