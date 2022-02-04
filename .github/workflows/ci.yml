@@ -58,3 +58,12 @@ jobs:
           DB_USER: user
           DB_PASS: password
           DB_NAME: db
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.14.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_METHOD: "squash"
+          MERGE_DELETE_BRANCH: "true"
