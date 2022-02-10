@@ -20,5 +20,5 @@ jobs:
           port: ${{ secrets.STAGE_PORT }}
           script: |
             cd social_network
-            git pull
+            git pull > /dev/null
             docker-compose -f docker-compose.prod.yml up -d --no-recreate
