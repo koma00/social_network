@@ -12,4 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy to Staging
-        run: echo "Deploy to STAGING code here"
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.STAGE_HOST }}
+          username: ${{ secrets.STAGE_USERNAME }}
+          key: ${{ secrets.STAGE_KEY }}
+          port: ${{ secrets.STAGE_PORT }}
+          script: |
+            cd social_network
+            git pull
+            docker-compose -f docker-compose.prod.yml up -d --no-recreate
