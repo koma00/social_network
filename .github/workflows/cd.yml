@@ -22,15 +22,15 @@ jobs:
             cd social_network
             git fetch --all
             git reset --hard origin/main
-            echo SECRET_KEY=${{ secrets.STAGE_SECRET_KEY }} > .env.prod
-            echo DEBUG=0 >> .env.prod
-            echo ALLOWED_HOSTS=${{ secrets.STAGE_ALLOWED_HOSTS }} >> .env.prod
-            echo DB_HOST=${{ secrets.STAGE_DB_HOST }} >> .env.prod
-            echo DB_NAME=${{ secrets.STAGE_DB_NAME }} >> .env.prod
-            echo DB_USER=${{ secrets.STAGE_DB_USER }} >> .env.prod
-            echo DB_PASS=${{ secrets.STAGE_DB_PASS }} >> .env.prod
-            echo POSTGRES_DB=${{ secrets.STAGE_DB_NAME }} >> .env.prod
-            echo POSTGRES_USER=${{ secrets.STAGE_DB_USER }} >> .env.prod
-            echo POSTGRES_PASSWORD=${{ secrets.STAGE_DB_PASS }} >> .env.prod
+            echo "SECRET_KEY=${{ secrets.STAGE_SECRET_KEY }}" > .env.prod
+            echo "DEBUG=0" >> .env.prod
+            echo "ALLOWED_HOSTS=${{ secrets.STAGE_ALLOWED_HOSTS }}" >> .env.prod
+            echo "DB_HOST=${{ secrets.STAGE_DB_HOST }}" >> .env.prod
+            echo "DB_NAME=${{ secrets.STAGE_DB_NAME }}" >> .env.prod
+            echo "DB_USER=${{ secrets.STAGE_DB_USER }}" >> .env.prod
+            echo "DB_PASS=${{ secrets.STAGE_DB_PASS }}" >> .env.prod
+            echo "POSTGRES_DB=${{ secrets.STAGE_DB_NAME }}" >> .env.prod
+            echo "POSTGRES_USER=${{ secrets.STAGE_DB_USER }}" >> .env.prod
+            echo "POSTGRES_PASSWORD=${{ secrets.STAGE_DB_PASS }}" >> .env.prod
             docker-compose -f docker-compose.prod.yml build
             docker-compose -f docker-compose.prod.yml up -d
