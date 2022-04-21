@@ -12,6 +12,7 @@ services:
       - 8000
     volumes:
       - ./app:/usr/src/app
+      - static_volume:/usr/src/app/staticfiles
     env_file:
       - ./.env.prod
     depends_on:
